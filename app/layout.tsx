@@ -63,9 +63,22 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": "BarberShop",
+              "@type": ["HairSalon", "Barbershop", "LocalBusiness"],
+              "@id": "https://www.chichobarbershop.com/#business",
               name: "Chicho Barbershop LLC",
-              image: "/hero.png",
+              url: "https://www.chichobarbershop.com/",
+              telephone: "+1-609-310-8842",
+              description:
+                "Chicho Barbershop LLC is a professional barbershop located in Trenton, New Jersey offering barber haircuts, braids, custom hair designs, manicure and pedicure services. The shop is owned by Chicho, a barber with more than 15 years of experience in the barbering industry.",
+              image: "https://www.chichobarbershop.com/og-image.jpg",
+              founder: {
+                "@type": "Person",
+                name: "Chicho",
+                jobTitle: "Master Barber",
+                description:
+                  "Professional barber with more than 15 years of experience in haircuts, fades, designs, and grooming services.",
+              },
+              foundingDate: "2010",
               address: {
                 "@type": "PostalAddress",
                 streetAddress: "869 E State St",
@@ -74,19 +87,31 @@ export default function RootLayout({
                 postalCode: "08609",
                 addressCountry: "US",
               },
-              telephone: "+1-609-310-8842",
-              url: "https://chichobarbershop.com",
-              aggregateRating: {
-                "@type": "AggregateRating",
-                ratingValue: "4.3",
-                reviewCount: "120",
+              geo: {
+                "@type": "GeoCoordinates",
+                latitude: 40.2235967,
+                longitude: -74.7452216,
               },
+              hasMap:
+                "https://www.google.com/maps/place/Chicho+Barbershop+LLC/@40.2235967,-74.7477965,17z/data=!3m1!4b1!4m6!3m5!1s0x89c15905d680000f:0xf9cfbe8453285485!8m2!3d40.2235967!4d-74.7452216!16s%2Fg%2F11yfqkx5c3",
+              priceRange: "$$",
+              areaServed: [
+                { "@type": "City", name: "Trenton" },
+                { "@type": "City", name: "Hamilton" },
+                { "@type": "City", name: "Ewing" },
+              ],
               openingHoursSpecification: [
                 {
                   "@type": "OpeningHoursSpecification",
-                  dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-                  opens: "08:00",
+                  dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday"],
+                  opens: "09:00",
                   closes: "19:00",
+                },
+                {
+                  "@type": "OpeningHoursSpecification",
+                  dayOfWeek: ["Friday", "Saturday"],
+                  opens: "08:00",
+                  closes: "20:00",
                 },
                 {
                   "@type": "OpeningHoursSpecification",
@@ -95,17 +120,16 @@ export default function RootLayout({
                   closes: "17:00",
                 },
               ],
-              priceRange: "$18-$65",
               hasOfferCatalog: {
                 "@type": "OfferCatalog",
-                name: "Barbershop Services",
+                name: "Barbershop and Beauty Services",
                 itemListElement: [
-                  { "@type": "Offer", itemOffered: { "@type": "Service", name: "Classic Haircut" }, price: "25", priceCurrency: "USD" },
-                  { "@type": "Offer", itemOffered: { "@type": "Service", name: "Beard Trim & Shape" }, price: "20", priceCurrency: "USD" },
-                  { "@type": "Offer", itemOffered: { "@type": "Service", name: "Fade & Taper" }, price: "30", priceCurrency: "USD" },
-                  { "@type": "Offer", itemOffered: { "@type": "Service", name: "Hot Towel Shave" }, price: "35", priceCurrency: "USD" },
-                  { "@type": "Offer", itemOffered: { "@type": "Service", name: "Kids Haircut" }, price: "18", priceCurrency: "USD" },
-                  { "@type": "Offer", itemOffered: { "@type": "Service", name: "Full Package" }, price: "65", priceCurrency: "USD" },
+                  { "@type": "Offer", itemOffered: { "@type": "Service", name: "Barber Haircuts" } },
+                  { "@type": "Offer", itemOffered: { "@type": "Service", name: "Braids" } },
+                  { "@type": "Offer", itemOffered: { "@type": "Service", name: "Hair Designs" } },
+                  { "@type": "Offer", itemOffered: { "@type": "Service", name: "Trenzas" } },
+                  { "@type": "Offer", itemOffered: { "@type": "Service", name: "Manicure" } },
+                  { "@type": "Offer", itemOffered: { "@type": "Service", name: "Pedicure" } },
                 ],
               },
             }),

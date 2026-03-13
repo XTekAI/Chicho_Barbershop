@@ -54,8 +54,13 @@ export default function Booking() {
                 </svg>
             ),
             label: 'Hours',
-            value: 'Mon–Sat: 8AM–7PM · Sun: 9AM–5PM',
+            value: null,
             href: null,
+            hours: [
+                { days: 'Mon – Thu', time: '9AM – 7PM' },
+                { days: 'Fri – Sat', time: '8AM – 8PM' },
+                { days: 'Sunday', time: '9AM – 5PM' },
+            ],
         },
     ];
 
@@ -91,13 +96,22 @@ export default function Booking() {
                                     <div style={{ color: '#555', fontSize: '0.72rem', textTransform: 'uppercase', letterSpacing: '0.15em', marginBottom: '0.3rem' }}>
                                         {item.label}
                                     </div>
-                                    {item.href ? (
+                                    {item.hours ? (
+                                        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.35rem' }}>
+                                            {item.hours.map((h) => (
+                                                <div key={h.days} style={{ display: 'flex', justifyContent: 'space-between', gap: '1.5rem' }}>
+                                                    <span style={{ color: 'white', fontWeight: 500, fontSize: '0.9rem' }}>{h.days}</span>
+                                                    <span style={{ color: '#00FF2A', fontWeight: 600, fontSize: '0.9rem' }}>{h.time}</span>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    ) : item.href ? (
                                         <a
                                             href={item.href}
                                             target={item.href.startsWith('http') ? '_blank' : undefined}
                                             rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                                             style={{ color: 'white', textDecoration: 'none', fontWeight: 500, lineHeight: 1.5, cursor: 'pointer' }}
-                                            onMouseEnter={(e) => ((e.target as HTMLElement).style.color = '#ADFF2F')}
+                                            onMouseEnter={(e) => ((e.target as HTMLElement).style.color = '#00FF2A')}
                                             onMouseLeave={(e) => ((e.target as HTMLElement).style.color = 'white')}
                                         >
                                             {item.value}
@@ -154,6 +168,7 @@ export default function Booking() {
                                             {field.label}
                                         </label>
                                         <input
+                                            suppressHydrationWarning
                                             id={field.id}
                                             type={field.type}
                                             placeholder={field.placeholder}
@@ -176,6 +191,7 @@ export default function Booking() {
                                         Service
                                     </label>
                                     <select
+                                        suppressHydrationWarning
                                         id="service"
                                         value={formData.service}
                                         onChange={(e) => setFormData({ ...formData, service: e.target.value })}
@@ -202,6 +218,7 @@ export default function Booking() {
                                         Message (optional)
                                     </label>
                                     <textarea
+                                        suppressHydrationWarning
                                         id="message"
                                         rows={3}
                                         placeholder="Preferred time, style notes..."

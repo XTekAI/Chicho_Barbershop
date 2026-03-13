@@ -13,7 +13,7 @@ export default function Footer() {
                 <div
                     style={{
                         display: 'grid',
-                        gridTemplateColumns: '2fr 1fr 1fr',
+                        gridTemplateColumns: '2fr 1fr 1fr 1fr',
                         gap: '3rem',
                         marginBottom: '3rem',
                     }}
@@ -138,21 +138,37 @@ export default function Footer() {
                         </h4>
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '0.7rem' }}>
                             <a href="tel:6093108842" style={{ color: '#555', textDecoration: 'none', fontSize: '0.875rem', transition: 'color 0.2s ease' }}
-                                onMouseEnter={(e) => ((e.target as HTMLElement).style.color = '#ADFF2F')}
+                                onMouseEnter={(e) => ((e.target as HTMLElement).style.color = '#00FF2A')}
                                 onMouseLeave={(e) => ((e.target as HTMLElement).style.color = '#555')}
                             >
                                 (609) 310-8842
                             </a>
                             <a href="https://maps.google.com/?q=869+E+State+St+Trenton+NJ" target="_blank" rel="noopener noreferrer"
                                 style={{ color: '#555', textDecoration: 'none', fontSize: '0.875rem', lineHeight: 1.5, transition: 'color 0.2s ease' }}
-                                onMouseEnter={(e) => ((e.target as HTMLElement).style.color = '#ADFF2F')}
+                                onMouseEnter={(e) => ((e.target as HTMLElement).style.color = '#00FF2A')}
                                 onMouseLeave={(e) => ((e.target as HTMLElement).style.color = '#555')}
                             >
                                 869 E State St<br />Trenton, NJ 08609
                             </a>
-                            <span style={{ color: '#555', fontSize: '0.875rem', lineHeight: 1.6 }}>
-                                Mon–Sat: 8AM–7PM<br />Sun: 9AM–5PM
-                            </span>
+                        </div>
+                    </div>
+
+                    {/* Business Hours */}
+                    <div>
+                        <h4 style={{ color: 'white', fontWeight: 600, fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '0.15em', marginBottom: '1.25rem' }}>
+                            Hours
+                        </h4>
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                            {[
+                                { days: 'Mon – Thu', hours: '9AM – 7PM' },
+                                { days: 'Fri – Sat', hours: '8AM – 8PM' },
+                                { days: 'Sunday', hours: '9AM – 5PM' },
+                            ].map((item) => (
+                                <div key={item.days} style={{ display: 'flex', justifyContent: 'space-between', gap: '1rem' }}>
+                                    <span style={{ color: '#555', fontSize: '0.875rem' }}>{item.days}</span>
+                                    <span style={{ color: '#00FF2A', fontSize: '0.875rem', fontWeight: 600 }}>{item.hours}</span>
+                                </div>
+                            ))}
                         </div>
                     </div>
                 </div>

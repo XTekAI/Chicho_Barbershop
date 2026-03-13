@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --green: #ADFF2F;
-  --green-dim: #8acc1e;
+  --green: #00FF2A;
+  --green-dim: #00cc22;
   --black: #0a0a0a;
   --charcoal: #111111;
   --card: #1a1a1a;
@@ -185,6 +185,22 @@ body::before {
 .reveal.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Profile page responsive */
+@media (max-width: 768px) {
+  .profile-about-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .profile-gallery-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-gallery-grid {
+    grid-template-columns: 1fr !important;
+  }
 }
 
 /* Mobile optimizations */
