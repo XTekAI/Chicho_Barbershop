@@ -35,7 +35,7 @@ export default function Booking() {
             ),
             label: 'Address',
             value: '869 E State St, Trenton, NJ 08609',
-            href: 'https://maps.google.com/?q=869+E+State+St,+Trenton,+NJ+08609',
+            href: 'https://www.google.com/maps/place/Chicho+Barbershop+LLC/@40.2236008,-74.7477965,17z/data=!3m1!4b1!4m6!3m5!1s0x89c15905d680000f:0xf9cfbe8453285485!8m2!3d40.2235967!4d-74.7452216!16s%2Fg%2F11yfqkx5c3',
         },
         {
             icon: (
@@ -234,7 +234,7 @@ export default function Booking() {
                                     />
                                 </div>
 
-                                <button type="submit" className="btn-primary" style={{ justifyContent: 'center', marginTop: '0.5rem' }}>
+                                <button suppressHydrationWarning type="submit" className="btn-primary" style={{ justifyContent: 'center', marginTop: '0.5rem' }}>
                                     <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
                                         <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" />
                                     </svg>

@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { teamMembers } from '@/lib/team-data';
 
 export default function Team() {
@@ -79,9 +80,19 @@ export default function Team() {
                                         display: 'flex', alignItems: 'center', justifyContent: 'center',
                                         fontFamily: "'Bebas Neue', sans-serif",
                                         fontSize: '1.6rem', color: member.accent,
-                                        flexShrink: 0,
+                                        flexShrink: 0, overflow: 'hidden', position: 'relative',
                                     }}>
-                                        {member.initial}
+                                        {member.image ? (
+                                            <Image
+                                                src={member.image}
+                                                alt={member.name}
+                                                fill
+                                                sizes="56px"
+                                                style={{ objectFit: 'cover' }}
+                                            />
+                                        ) : (
+                                            member.initial
+                                        )}
                                     </div>
                                     <div>
                                         <h3 style={{

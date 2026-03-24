@@ -5,6 +5,8 @@ export interface TeamMember {
     specialty: string;
     initial: string;
     accent: string;
+    image?: string;
+    workPhotos?: string[];
     shortBio: string;
     fullBio: string;
     experience: string;
@@ -12,6 +14,7 @@ export interface TeamMember {
     personality: string;
     specialties: string[];
     socialLinks: { platform: string; url: string }[];
+    bookingUrl: string;
 }
 
 export const teamMembers: TeamMember[] = [
@@ -22,6 +25,7 @@ export const teamMembers: TeamMember[] = [
         specialty: 'Fades & Skin Fades',
         initial: 'C',
         accent: '#00FF2A',
+        image: '/team/chicho.jpeg',
         shortBio: 'The founder — over 10 years of experience crafting the perfect fade.',
         fullBio: 'As the owner and master barber of Chicho Barbershop, Chicho has dedicated his career to providing premium grooming services in Trenton, NJ. His passion for barbering started at a young age and has only grown stronger.',
         experience: 'With over a decade of experience, Chicho has mastered every type of fade, from low skin fades to complex designs. He has trained and mentored many of the barbers on the team.',
@@ -29,9 +33,10 @@ export const teamMembers: TeamMember[] = [
         personality: 'Passionate, hardworking, and always pushing to be the best.',
         specialties: ['Skin Fades', 'Low Fades', 'Mid Fades', 'Designs', 'Hot Towel Shaves', 'Kids Cuts'],
         socialLinks: [
-            { platform: 'Instagram', url: '#' },
-            { platform: 'TikTok', url: '#' },
+            { platform: 'Instagram', url: 'https://www.instagram.com/chichobarbershopllc/' },
+            { platform: 'Facebook', url: 'https://www.facebook.com/profile.php?id=61550960498707' },
         ],
+        bookingUrl: 'https://book.squareup.com/appointments/fizei3yso5d64r/location/LE9WWBS6A0PFZ/services?buttonTextColor=000000&color=0eee1d&locale=en&referrer=so&team_member_id=TMEj5Sv9HQV4TrBh',
     },
     {
         name: 'Alex',
@@ -39,7 +44,7 @@ export const teamMembers: TeamMember[] = [
         role: 'Barber',
         specialty: 'Fades & Modern Cuts',
         initial: 'A',
-        accent: '#00FF2A',
+        accent: '#FF003C',
         shortBio: 'Precision fades and modern styles that keep you looking sharp every time.',
         fullBio: 'Alex brings creativity and precision to every cut. With a keen eye for detail and a passion for modern barbering, he stays on top of the latest trends while mastering the classics.',
         experience: 'Trained in both classic and contemporary techniques, Alex has built a loyal client base who trust him for clean, consistent results.',
@@ -47,9 +52,10 @@ export const teamMembers: TeamMember[] = [
         personality: 'Friendly, focused, and always ready to try something new.',
         specialties: ['Fades', 'Modern Cuts', 'Beard Trims', 'Line-ups', 'Designs'],
         socialLinks: [
-            { platform: 'Instagram', url: '#' },
-            { platform: 'TikTok', url: '#' },
+            { platform: 'Instagram', url: 'https://www.instagram.com/chichobarbershopllc/' },
+            { platform: 'Facebook', url: 'https://www.facebook.com/profile.php?id=61550960498707' },
         ],
+        bookingUrl: 'https://book.squareup.com/appointments/fizei3yso5d64r/location/LE9WWBS6A0PFZ/services?buttonTextColor=000000&color=0eee1d&locale=en&referrer=so&team_member_id=TMtzW7h76ui1qMIl',
     },
     {
         name: 'Anxel',
@@ -65,9 +71,10 @@ export const teamMembers: TeamMember[] = [
         personality: 'Calm, professional, and dedicated to his craft.',
         specialties: ['Classic Cuts', 'Beard Trims', 'Hot Towel Shaves', 'Line-ups', 'Taper Fades'],
         socialLinks: [
-            { platform: 'Instagram', url: '#' },
-            { platform: 'TikTok', url: '#' },
+            { platform: 'Instagram', url: 'https://www.instagram.com/chichobarbershopllc/' },
+            { platform: 'Facebook', url: 'https://www.facebook.com/profile.php?id=61550960498707' },
         ],
+        bookingUrl: 'https://book.squareup.com/appointments/fizei3yso5d64r/location/LE9WWBS6A0PFZ/services?buttonTextColor=000000&color=0eee1d&locale=en&referrer=so&team_member_id=TMi3HMxjkC6QXFnQ',
     },
     {
         name: 'Jeremy',
@@ -83,9 +90,10 @@ export const teamMembers: TeamMember[] = [
         personality: 'Energetic, creative, and always bringing good vibes to the shop.',
         specialties: ['Textured Crops', 'Modern Fades', 'Beard Trims', 'Kids Cuts', 'Designs'],
         socialLinks: [
-            { platform: 'Instagram', url: '#' },
-            { platform: 'TikTok', url: '#' },
+            { platform: 'Instagram', url: 'https://www.instagram.com/chichobarbershopllc/' },
+            { platform: 'Facebook', url: 'https://www.facebook.com/profile.php?id=61550960498707' },
         ],
+        bookingUrl: 'https://book.squareup.com/appointments/fizei3yso5d64r/location/LE9WWBS6A0PFZ/services?buttonTextColor=000000&color=0eee1d&locale=en&referrer=so&team_member_id=TM3YsdhGovEIk72x',
     },
     {
         name: 'Jesús',
@@ -94,6 +102,7 @@ export const teamMembers: TeamMember[] = [
         specialty: 'Beard Sculpting & Fades',
         initial: 'J',
         accent: '#C77DFF',
+        image: '/team/jesus.jpeg',
         shortBio: 'Master of beard sculpting and precision fades for the perfect look.',
         fullBio: 'Jesús specializes in combining expert fades with detailed beard work. His clients trust him to deliver sharp, clean results every single time.',
         experience: 'With a strong foundation in both classic and modern techniques, Jesús has developed a signature style that blends precision with artistry.',
@@ -101,9 +110,10 @@ export const teamMembers: TeamMember[] = [
         personality: 'Detail-oriented, patient, and always striving for perfection.',
         specialties: ['Beard Sculpting', 'Fades', 'Line-ups', 'Hot Towel Shaves', 'Classic Cuts'],
         socialLinks: [
-            { platform: 'Instagram', url: '#' },
-            { platform: 'TikTok', url: '#' },
+            { platform: 'Instagram', url: 'https://www.instagram.com/chichobarbershopllc/' },
+            { platform: 'Facebook', url: 'https://www.facebook.com/profile.php?id=61550960498707' },
         ],
+        bookingUrl: 'https://book.squareup.com/appointments/fizei3yso5d64r/location/LE9WWBS6A0PFZ/services?buttonTextColor=000000&color=0eee1d&locale=en&referrer=so&team_member_id=TMv_srPKC9er16Sb',
     },
     {
         name: 'John',
@@ -119,35 +129,41 @@ export const teamMembers: TeamMember[] = [
         personality: 'Warm, patient, and great with people of all ages.',
         specialties: ['Kids Cuts', 'Classic Cuts', 'Fades', 'Beard Trims', 'Line-ups'],
         socialLinks: [
-            { platform: 'Instagram', url: '#' },
-            { platform: 'TikTok', url: '#' },
+            { platform: 'Instagram', url: 'https://www.instagram.com/chichobarbershopllc/' },
+            { platform: 'Facebook', url: 'https://www.facebook.com/profile.php?id=61550960498707' },
         ],
+        bookingUrl: 'https://book.squareup.com/appointments/fizei3yso5d64r/location/LE9WWBS6A0PFZ/services?buttonTextColor=000000&color=0eee1d&locale=en&referrer=so&team_member_id=TMm2LGRnP6Nljy6b',
     },
     {
         name: 'María',
         slug: 'maria',
-        role: 'Barber',
-        specialty: 'Styling & Creative Cuts',
+        role: 'Braids Specialist',
+        specialty: 'Braids, Trenzas & Hair Design',
         initial: 'M',
         accent: '#FF69B4',
-        shortBio: 'Creative cuts and styling with a unique artistic touch.',
-        fullBio: 'María brings a fresh perspective to the team with her creative approach to barbering. Her eye for style and attention to detail make her a standout professional.',
-        experience: 'With training in both barbering and hairstyling, María offers a unique blend of techniques that cater to a diverse range of clients.',
-        approach: 'She loves collaborating with clients to create looks that reflect their personality, from bold and edgy to clean and classic.',
-        personality: 'Artistic, approachable, and always inspiring confidence.',
-        specialties: ['Creative Cuts', 'Styling', 'Fades', 'Modern Cuts', 'Beard Trims'],
+        image: '/team/maria.jpeg',
+        workPhotos: Array.from({ length: 10 }, (_, i) => `/team/maria-work/braids ${i + 1}.jpeg`),
+        shortBio: 'Expert in braids, trenzas, and creative hair designs that make a statement.',
+        fullBio: 'María is the go-to braids specialist at Chicho Barbershop. From intricate trenzas to bold creative designs, she brings artistry and precision to every style she creates.',
+        experience: 'With years of expertise in braiding and hair design, María has mastered a wide range of styles — from classic cornrows to modern feed-in braids and custom patterns.',
+        approach: 'She takes time to consult with each client, understanding the look they want and delivering braids that are not only beautiful but also comfortable and long-lasting.',
+        personality: 'Artistic, patient, and passionate about creating unique styles.',
+        specialties: ['Braids', 'Trenzas', 'Cornrows', 'Feed-in Braids', 'Hair Designs', 'Protective Styles'],
         socialLinks: [
-            { platform: 'Instagram', url: '#' },
-            { platform: 'TikTok', url: '#' },
+            { platform: 'Instagram', url: 'https://www.instagram.com/chichobarbershopllc/' },
+            { platform: 'Facebook', url: 'https://www.facebook.com/profile.php?id=61550960498707' },
         ],
+        bookingUrl: 'https://book.squareup.com/appointments/fizei3yso5d64r/location/LE9WWBS6A0PFZ/services?buttonTextColor=000000&color=0eee1d&locale=en&referrer=so&team_member_id=TMc-Jz9V_FNuN0o2',
     },
     {
-        name: 'Gabi',
+        name: 'Gaby',
         slug: 'gabi',
         role: 'Nail Specialist',
         specialty: 'Nail Specialist – Manicure & Pedicure',
         initial: 'G',
         accent: '#E040FB',
+        image: '/team/gabi.jpeg',
+        workPhotos: Array.from({ length: 10 }, (_, i) => `/team/gabi-work/nails ${i + 1}.jpeg`),
         shortBio: 'Expert nail care — manicure, pedicure, and nail design services.',
         fullBio: 'Gabi is the dedicated nail specialist at Chicho Barbershop, bringing professional nail care services to complement the grooming experience. Her precision and attention to detail ensure every client leaves with perfectly polished nails.',
         experience: 'With extensive training in nail care and design, Gabi has developed a loyal client base who appreciate her meticulous work and creative nail art.',
@@ -155,9 +171,10 @@ export const teamMembers: TeamMember[] = [
         personality: 'Meticulous, creative, and passionate about nail artistry.',
         specialties: ['Manicure', 'Pedicure', 'Nail Care', 'Nail Design'],
         socialLinks: [
-            { platform: 'Instagram', url: '#' },
-            { platform: 'TikTok', url: '#' },
+            { platform: 'Instagram', url: 'https://www.instagram.com/chichobarbershopllc/' },
+            { platform: 'Facebook', url: 'https://www.facebook.com/profile.php?id=61550960498707' },
         ],
+        bookingUrl: 'https://book.squareup.com/appointments/fizei3yso5d64r/location/LE9WWBS6A0PFZ/services?buttonTextColor=000000&color=0eee1d&locale=en&referrer=so&team_member_id=TMAyhxxiRwkFHLtn',
     },
 ];
 

@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import type { TeamMember } from '@/lib/team-data';
 
 export default function TeamProfile({ member }: { member: TeamMember }) {
@@ -80,8 +81,20 @@ export default function TeamProfile({ member }: { member: TeamMember }) {
                             display: 'flex', alignItems: 'center', justifyContent: 'center',
                             fontFamily: "'Bebas Neue', sans-serif",
                             fontSize: '4.5rem', color: member.accent, flexShrink: 0,
+                            overflow: 'hidden', position: 'relative',
                         }}>
-                            {member.initial}
+                            {member.image ? (
+                                <Image
+                                    src={member.image}
+                                    alt={member.name}
+                                    fill
+                                    sizes="160px"
+                                    style={{ objectFit: 'cover' }}
+                                    priority
+                                />
+                            ) : (
+                                member.initial
+                            )}
                         </div>
 
                         <div style={{ flex: 1, minWidth: '250px' }}>
@@ -121,7 +134,7 @@ export default function TeamProfile({ member }: { member: TeamMember }) {
                                 {member.shortBio}
                             </p>
 
-                            <a href="tel:6093108842" className="btn-primary" style={{ fontSize: '0.85rem' }}>
+                            <a href={member.bookingUrl} target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ fontSize: '0.85rem' }}>
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
                                     <path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z" />
                                 </svg>
@@ -228,44 +241,79 @@ export default function TeamProfile({ member }: { member: TeamMember }) {
             </section>
 
             {/* SECTION 4 — Work Gallery */}
-            <section className="section-padding" style={{ background: 'var(--charcoal)' }}>
+            <section className="section-padding" style={{ background: 'var(--charcoal)', overflow: 'hidden' }}>
                 <div className="container-max">
                     <div className="reveal" style={{ textAlign: 'center', marginBottom: '3rem' }}>
                         <span className="section-label">Portfolio</span>
                         <h2 className="section-title">{member.name.toUpperCase()}&apos;S WORK</h2>
                         <div className="divider-line" style={{ margin: '0 auto' }} />
                     </div>
+                </div>
 
-                    <div className="reveal profile-gallery-grid" style={{
-                        display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)',
-                        gap: '1rem',
-                    }}>
-                        {Array.from({ length: 6 }).map((_, i) => (
-                            <div key={i} style={{
-                                aspectRatio: '1', borderRadius: '12px',
-                                background: `linear-gradient(135deg, ${member.accent}08, ${member.accent}03)`,
-                                border: '1px solid var(--border)',
-                                display: 'flex', flexDirection: 'column',
-                                alignItems: 'center', justifyContent: 'center',
-                                gap: '0.75rem', transition: 'all 0.2s ease',
-                            }}
-                                onMouseEnter={(e) => {
-                                    (e.currentTarget as HTMLElement).style.borderColor = `${member.accent}50`;
-                                }}
-                                onMouseLeave={(e) => {
-                                    (e.currentTarget as HTMLElement).style.borderColor = 'var(--border)';
-                                }}
-                            >
-                                <svg width="32" height="32" viewBox="0 0 24 24" fill={`${member.accent}40`}>
-                                    <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z" />
-                                </svg>
-                                <span style={{ color: '#444', fontSize: '0.75rem', letterSpacing: '0.05em' }}>
-                                    Photo coming soon
-                                </span>
-                            </div>
-                        ))}
+                {/* Infinite scroll gallery — real photos or animated placeholders */}
+                <div style={{
+                    maskImage: 'linear-gradient(90deg, transparent 0%, black 8%, black 92%, transparent 100%)',
+                    WebkitMaskImage: 'linear-gradient(90deg, transparent 0%, black 8%, black 92%, transparent 100%)',
+                    overflow: 'hidden',
+                }}>
+                    <div className="gallery-scroll-track" style={{ display: 'flex', gap: '1rem', width: 'max-content' }}>
+                        {(() => {
+                            const items = member.workPhotos && member.workPhotos.length > 0
+                                ? [...member.workPhotos, ...member.workPhotos]
+                                : Array.from({ length: 16 }, (_, i) => i);
+                            return items.map((item, i) => (
+                                <div key={i} className="gallery-scroll-item" style={{
+                                    flexShrink: 0, width: '280px', height: '280px',
+                                    borderRadius: '14px', overflow: 'hidden',
+                                    border: `1px solid ${member.accent}25`,
+                                    boxShadow: '0 4px 20px rgba(0,0,0,0.4)',
+                                    transition: 'transform 0.3s ease, filter 0.3s ease',
+                                    background: typeof item === 'string'
+                                        ? undefined
+                                        : `linear-gradient(135deg, ${member.accent}${i % 2 === 0 ? '18' : '0a'}, #111)`,
+                                    display: 'flex', alignItems: 'center', justifyContent: 'center',
+                                    flexDirection: 'column', gap: '0.75rem',
+                                }}>
+                                    {typeof item === 'string' ? (
+                                        // eslint-disable-next-line @next/next/no-img-element
+                                        <img
+                                            src={item}
+                                            alt={`${member.name} work`}
+                                            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                                            loading="lazy"
+                                        />
+                                    ) : (
+                                        <>
+                                            <svg width="36" height="36" viewBox="0 0 24 24" fill={`${member.accent}50`}>
+                                                <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z" />
+                                            </svg>
+                                            <span style={{ color: `${member.accent}80`, fontSize: '0.72rem', letterSpacing: '0.1em', textTransform: 'uppercase' }}>
+                                                Coming Soon
+                                            </span>
+                                        </>
+                                    )}
+                                </div>
+                            ));
+                        })()}
                     </div>
                 </div>
+
+                <style jsx>{`
+                    @keyframes scroll-right {
+                        0% { transform: translateX(0); }
+                        100% { transform: translateX(-50%); }
+                    }
+                    .gallery-scroll-track {
+                        animation: scroll-right 25s linear infinite;
+                    }
+                    .gallery-scroll-track:hover {
+                        animation-play-state: paused;
+                    }
+                    .gallery-scroll-item:hover {
+                        transform: scale(1.04);
+                        filter: brightness(1.1);
+                    }
+                `}</style>
             </section>
 
             {/* SECTION 5 — Social Media */}
@@ -273,7 +321,7 @@ export default function TeamProfile({ member }: { member: TeamMember }) {
                 <section className="section-padding" style={{ background: 'var(--black)', paddingTop: '3rem', paddingBottom: '3rem' }}>
                     <div className="container-max">
                         <div className="reveal" style={{ textAlign: 'center' }}>
-                            <span className="section-label">Follow {member.name}</span>
+                            <span className="section-label">Follow Chicho Barbershop</span>
                             <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', marginTop: '1.5rem' }}>
                                 {member.socialLinks.map((link) => (
                                     <a
@@ -302,9 +350,9 @@ export default function TeamProfile({ member }: { member: TeamMember }) {
                                                 <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
                                             </svg>
                                         )}
-                                        {link.platform === 'TikTok' && (
+                                        {link.platform === 'Facebook' && (
                                             <svg width="20" height="20" viewBox="0 0 24 24" fill={member.accent}>
-                                                <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 00-.79-.05A6.34 6.34 0 003.15 15.2a6.34 6.34 0 0010.86 4.48v-7.1a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-.8-.04 4.83 4.83 0 01.61-3.97z" />
+                                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
                                             </svg>
                                         )}
                                     </a>
@@ -333,7 +381,7 @@ export default function TeamProfile({ member }: { member: TeamMember }) {
                             }
                         </p>
                         <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-                            <a href="tel:6093108842" className="btn-primary" style={{ fontSize: '0.9rem' }}>
+                            <a href={member.bookingUrl} target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ fontSize: '0.9rem' }}>
                                 <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                                     <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
                                 </svg>
