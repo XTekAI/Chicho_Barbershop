@@ -6,6 +6,7 @@ export interface TeamMember {
     initial: string;
     accent: string;
     image?: string;
+    imagePosition?: string;
     workPhotos?: string[];
     shortBio: string;
     fullBio: string;
@@ -33,8 +34,8 @@ export const teamMembers: TeamMember[] = [
         personality: 'Passionate, hardworking, and always pushing to be the best.',
         specialties: ['Skin Fades', 'Low Fades', 'Mid Fades', 'Designs', 'Hot Towel Shaves', 'Kids Cuts'],
         socialLinks: [
-            { platform: 'Instagram', url: 'https://www.instagram.com/chichobarbershopllc/' },
-            { platform: 'Facebook', url: 'https://www.facebook.com/profile.php?id=61550960498707' },
+            { platform: 'Instagram', url: 'https://www.instagram.com/chichobarbershop' },
+            { platform: 'Facebook', url: 'https://www.facebook.com/profile.php?id=100054426762491' },
         ],
         bookingUrl: 'https://book.squareup.com/appointments/fizei3yso5d64r/location/LE9WWBS6A0PFZ/services?buttonTextColor=000000&color=0eee1d&locale=en&referrer=so&team_member_id=TMEj5Sv9HQV4TrBh',
     },
@@ -45,6 +46,7 @@ export const teamMembers: TeamMember[] = [
         specialty: 'Fades & Modern Cuts',
         initial: 'A',
         accent: '#FF003C',
+        image: '/team/alex.jpeg',
         shortBio: 'Precision fades and modern styles that keep you looking sharp every time.',
         fullBio: 'Alex brings creativity and precision to every cut. With a keen eye for detail and a passion for modern barbering, he stays on top of the latest trends while mastering the classics.',
         experience: 'Trained in both classic and contemporary techniques, Alex has built a loyal client base who trust him for clean, consistent results.',
@@ -52,8 +54,8 @@ export const teamMembers: TeamMember[] = [
         personality: 'Friendly, focused, and always ready to try something new.',
         specialties: ['Fades', 'Modern Cuts', 'Beard Trims', 'Line-ups', 'Designs'],
         socialLinks: [
-            { platform: 'Instagram', url: 'https://www.instagram.com/chichobarbershopllc/' },
-            { platform: 'Facebook', url: 'https://www.facebook.com/profile.php?id=61550960498707' },
+            { platform: 'Instagram', url: 'https://www.instagram.com/chichobarbershop' },
+            { platform: 'Facebook', url: 'https://www.facebook.com/profile.php?id=100054426762491' },
         ],
         bookingUrl: 'https://book.squareup.com/appointments/fizei3yso5d64r/location/LE9WWBS6A0PFZ/services?buttonTextColor=000000&color=0eee1d&locale=en&referrer=so&team_member_id=TMtzW7h76ui1qMIl',
     },
@@ -64,6 +66,8 @@ export const teamMembers: TeamMember[] = [
         specialty: 'Classic Cuts & Beard Work',
         initial: 'A',
         accent: '#00D4FF',
+        image: '/team/anxel.jpeg',
+        imagePosition: 'top',
         shortBio: 'Classic cuts with a modern touch — clean, sharp, and always on point.',
         fullBio: 'Anxel is known for his mastery of classic barbering techniques combined with a modern edge. His attention to detail ensures every client leaves the chair looking their best.',
         experience: 'With years of hands-on experience, Anxel has perfected the art of traditional cuts, beard sculpting, and hot towel shaves.',
@@ -71,8 +75,8 @@ export const teamMembers: TeamMember[] = [
         personality: 'Calm, professional, and dedicated to his craft.',
         specialties: ['Classic Cuts', 'Beard Trims', 'Hot Towel Shaves', 'Line-ups', 'Taper Fades'],
         socialLinks: [
-            { platform: 'Instagram', url: 'https://www.instagram.com/chichobarbershopllc/' },
-            { platform: 'Facebook', url: 'https://www.facebook.com/profile.php?id=61550960498707' },
+            { platform: 'Instagram', url: 'https://www.instagram.com/chichobarbershop' },
+            { platform: 'Facebook', url: 'https://www.facebook.com/profile.php?id=100054426762491' },
         ],
         bookingUrl: 'https://book.squareup.com/appointments/fizei3yso5d64r/location/LE9WWBS6A0PFZ/services?buttonTextColor=000000&color=0eee1d&locale=en&referrer=so&team_member_id=TMi3HMxjkC6QXFnQ',
     },
@@ -83,6 +87,7 @@ export const teamMembers: TeamMember[] = [
         specialty: 'Textured Crops & Trends',
         initial: 'J',
         accent: '#FF6B35',
+        image: '/team/jeremy.jpeg',
         shortBio: 'Trending styles and textured cuts — always fresh, always on point.',
         fullBio: 'Jeremy is the go-to barber for anyone looking for the latest trends. From textured crops to mullets and everything in between, he keeps his skills sharp and his clients looking fresh.',
         experience: 'Jeremy has honed his skills working with clients of all ages and hair types, building a reputation for versatile and creative cuts.',
@@ -90,8 +95,8 @@ export const teamMembers: TeamMember[] = [
         personality: 'Energetic, creative, and always bringing good vibes to the shop.',
         specialties: ['Textured Crops', 'Modern Fades', 'Beard Trims', 'Kids Cuts', 'Designs'],
         socialLinks: [
-            { platform: 'Instagram', url: 'https://www.instagram.com/chichobarbershopllc/' },
-            { platform: 'Facebook', url: 'https://www.facebook.com/profile.php?id=61550960498707' },
+            { platform: 'Instagram', url: 'https://www.instagram.com/chichobarbershop' },
+            { platform: 'Facebook', url: 'https://www.facebook.com/profile.php?id=100054426762491' },
         ],
         bookingUrl: 'https://book.squareup.com/appointments/fizei3yso5d64r/location/LE9WWBS6A0PFZ/services?buttonTextColor=000000&color=0eee1d&locale=en&referrer=so&team_member_id=TM3YsdhGovEIk72x',
     },
@@ -110,27 +115,28 @@ export const teamMembers: TeamMember[] = [
         personality: 'Detail-oriented, patient, and always striving for perfection.',
         specialties: ['Beard Sculpting', 'Fades', 'Line-ups', 'Hot Towel Shaves', 'Classic Cuts'],
         socialLinks: [
-            { platform: 'Instagram', url: 'https://www.instagram.com/chichobarbershopllc/' },
-            { platform: 'Facebook', url: 'https://www.facebook.com/profile.php?id=61550960498707' },
+            { platform: 'Instagram', url: 'https://www.instagram.com/chichobarbershop' },
+            { platform: 'Facebook', url: 'https://www.facebook.com/profile.php?id=100054426762491' },
         ],
         bookingUrl: 'https://book.squareup.com/appointments/fizei3yso5d64r/location/LE9WWBS6A0PFZ/services?buttonTextColor=000000&color=0eee1d&locale=en&referrer=so&team_member_id=TMv_srPKC9er16Sb',
     },
     {
-        name: 'John',
+        name: 'Jon',
         slug: 'john',
         role: 'Barber',
         specialty: 'Kids Cuts & Family Styles',
         initial: 'J',
         accent: '#FFD700',
+        image: '/team/jon.jpeg',
         shortBio: 'The family barber — great with kids and adults alike.',
-        fullBio: 'John is known for his patience and skill, especially when it comes to working with younger clients. He creates a comfortable and fun experience for kids while delivering top-notch cuts for the whole family.',
-        experience: 'John has spent years building expertise in family-friendly barbering, earning the trust of parents and kids throughout Trenton.',
+        fullBio: 'Jon is known for his patience and skill, especially when it comes to working with younger clients. He creates a comfortable and fun experience for kids while delivering top-notch cuts for the whole family.',
+        experience: 'Jon has spent years building expertise in family-friendly barbering, earning the trust of parents and kids throughout Trenton.',
         approach: 'He believes barbering is about more than just hair — it\'s about building relationships and making everyone feel welcome.',
         personality: 'Warm, patient, and great with people of all ages.',
         specialties: ['Kids Cuts', 'Classic Cuts', 'Fades', 'Beard Trims', 'Line-ups'],
         socialLinks: [
-            { platform: 'Instagram', url: 'https://www.instagram.com/chichobarbershopllc/' },
-            { platform: 'Facebook', url: 'https://www.facebook.com/profile.php?id=61550960498707' },
+            { platform: 'Instagram', url: 'https://www.instagram.com/chichobarbershop' },
+            { platform: 'Facebook', url: 'https://www.facebook.com/profile.php?id=100054426762491' },
         ],
         bookingUrl: 'https://book.squareup.com/appointments/fizei3yso5d64r/location/LE9WWBS6A0PFZ/services?buttonTextColor=000000&color=0eee1d&locale=en&referrer=so&team_member_id=TMm2LGRnP6Nljy6b',
     },
@@ -150,8 +156,8 @@ export const teamMembers: TeamMember[] = [
         personality: 'Artistic, patient, and passionate about creating unique styles.',
         specialties: ['Braids', 'Trenzas', 'Cornrows', 'Feed-in Braids', 'Hair Designs', 'Protective Styles'],
         socialLinks: [
-            { platform: 'Instagram', url: 'https://www.instagram.com/chichobarbershopllc/' },
-            { platform: 'Facebook', url: 'https://www.facebook.com/profile.php?id=61550960498707' },
+            { platform: 'Instagram', url: 'https://www.instagram.com/chichobarbershop' },
+            { platform: 'Facebook', url: 'https://www.facebook.com/profile.php?id=100054426762491' },
         ],
         bookingUrl: 'https://book.squareup.com/appointments/fizei3yso5d64r/location/LE9WWBS6A0PFZ/services?buttonTextColor=000000&color=0eee1d&locale=en&referrer=so&team_member_id=TMc-Jz9V_FNuN0o2',
     },
@@ -171,8 +177,8 @@ export const teamMembers: TeamMember[] = [
         personality: 'Meticulous, creative, and passionate about nail artistry.',
         specialties: ['Manicure', 'Pedicure', 'Nail Care', 'Nail Design'],
         socialLinks: [
-            { platform: 'Instagram', url: 'https://www.instagram.com/chichobarbershopllc/' },
-            { platform: 'Facebook', url: 'https://www.facebook.com/profile.php?id=61550960498707' },
+            { platform: 'Instagram', url: 'https://www.instagram.com/chichobarbershop' },
+            { platform: 'Facebook', url: 'https://www.facebook.com/profile.php?id=100054426762491' },
         ],
         bookingUrl: 'https://book.squareup.com/appointments/fizei3yso5d64r/location/LE9WWBS6A0PFZ/services?buttonTextColor=000000&color=0eee1d&locale=en&referrer=so&team_member_id=TMAyhxxiRwkFHLtn',
     },

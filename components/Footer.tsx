@@ -39,7 +39,9 @@ export default function Footer() {
                         <div style={{ display: 'flex', gap: '0.75rem' }}>
                             {/* Instagram */}
                             <a
-                                href="#"
+                                href="https://www.instagram.com/chichobarbershop"
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 aria-label="Instagram"
                                 style={{
                                     width: '44px', height: '44px',
@@ -62,7 +64,9 @@ export default function Footer() {
                             </a>
                             {/* Facebook */}
                             <a
-                                href="#"
+                                href="https://www.facebook.com/profile.php?id=100054426762491"
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 aria-label="Facebook"
                                 style={{
                                     width: '44px', height: '44px',
@@ -85,7 +89,7 @@ export default function Footer() {
                             </a>
                             {/* Google */}
                             <a
-                                href="https://maps.google.com/?q=Chicho+Barbershop+LLC+Trenton+NJ"
+                                href="https://www.google.com/maps/place/Chicho+Barbershop+LLC/@40.2236008,-74.7477965,17z/data=!3m1!4b1!4m6!3m5!1s0x89c15905d680000f:0xf9cfbe8453285485!8m2!3d40.2235967!4d-74.7452216!16s%2Fg%2F11yfqkx5c3"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 aria-label="Google Maps"
@@ -143,7 +147,7 @@ export default function Footer() {
                             >
                                 (609) 310-8842
                             </a>
-                            <a href="https://maps.google.com/?q=869+E+State+St+Trenton+NJ" target="_blank" rel="noopener noreferrer"
+                            <a href="https://www.google.com/maps/place/Chicho+Barbershop+LLC/@40.2236008,-74.7477965,17z/data=!3m1!4b1!4m6!3m5!1s0x89c15905d680000f:0xf9cfbe8453285485!8m2!3d40.2235967!4d-74.7452216!16s%2Fg%2F11yfqkx5c3" target="_blank" rel="noopener noreferrer"
                                 style={{ color: '#555', textDecoration: 'none', fontSize: '0.875rem', lineHeight: 1.5, transition: 'color 0.2s ease' }}
                                 onMouseEnter={(e) => ((e.target as HTMLElement).style.color = '#00FF2A')}
                                 onMouseLeave={(e) => ((e.target as HTMLElement).style.color = '#555')}

@@ -88,7 +88,7 @@ export default function Team() {
                                                 alt={member.name}
                                                 fill
                                                 sizes="56px"
-                                                style={{ objectFit: 'cover' }}
+                                                style={{ objectFit: 'cover', objectPosition: member.imagePosition ?? 'center' }}
                                             />
                                         ) : (
                                             member.initial

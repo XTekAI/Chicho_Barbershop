@@ -110,6 +110,7 @@ export default function Testimonials() {
                 {/* Scroll controls */}
                 <div style={{ display: 'flex', justifyContent: 'flex-end', gap: '0.5rem', marginBottom: '1.5rem' }}>
                     <button
+                        suppressHydrationWarning
                         onClick={() => scroll('left')}
                         disabled={!canScrollLeft}
                         style={{
@@ -128,6 +129,7 @@ export default function Testimonials() {
                         </svg>
                     </button>
                     <button
+                        suppressHydrationWarning
                         onClick={() => scroll('right')}
                         disabled={!canScrollRight}
                         style={{

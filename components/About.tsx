@@ -66,37 +66,34 @@ export default function About() {
                         {/* Main card */}
                         <div
                             style={{
-                                background: 'linear-gradient(135deg, #1a2800 0%, #0a1400 50%, #0a0a0a 100%)',
                                 borderRadius: '16px',
                                 border: '1px solid #2a2a2a',
                                 minHeight: '320px',
                                 height: 'auto',
                                 aspectRatio: '3/4',
                                 maxHeight: '460px',
-                                display: 'flex',
-                                alignItems: 'center',
-                                justifyContent: 'center',
                                 position: 'relative',
                                 overflow: 'hidden',
                             }}
                         >
-                            {/* Decorative barber stripe */}
-                            <div style={{ position: 'absolute', top: 0, left: '20px', bottom: 0, width: '4px', background: 'repeating-linear-gradient(to bottom, #ADFF2F 0, #ADFF2F 20px, #fff 20px, #fff 40px, #111 40px, #111 60px)' }} />
-
-                            {/* Central icon */}
-                            <div style={{ textAlign: 'center' }}>
-                                <div style={{ marginBottom: '1.5rem' }}>
-                                    <svg width="80" height="80" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Barbershop scissors icon">
-                                        <path d="M9.64 7.64A3.5 3.5 0 1 0 5.5 11 3.48 3.48 0 0 0 8 10.15L9.17 11.3l-7.13 7.14 1.41 1.41L10.58 12.7 12 11.28l9.17 9.17 1.41-1.41-9.6-9.6A3.48 3.48 0 0 0 13 6.5a3.5 3.5 0 0 0-3.36 1.14zM5.5 9A1.5 1.5 0 1 1 7 10.5 1.5 1.5 0 0 1 5.5 9zm13 5a3.5 3.5 0 1 0 3.5 3.5A3.5 3.5 0 0 0 18.5 14zm0 5a1.5 1.5 0 1 1 1.5-1.5 1.5 1.5 0 0 1-1.5 1.5z" fill="#ADFF2F" />
-                                    </svg>
-                                </div>
-                                <div style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: '2rem', letterSpacing: '0.1em', color: '#ADFF2F' }}>
-                                    CHICHO
-                                </div>
-                                <div style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: '1.2rem', letterSpacing: '0.3em', color: '#555' }}>
-                                    BARBERSHOP LLC
-                                </div>
-                            </div>
+                            {/* eslint-disable-next-line @next/next/no-img-element */}
+                            <img
+                                src="/business.jpg"
+                                alt="Chicho Barbershop exterior"
+                                style={{
+                                    width: '100%',
+                                    height: '100%',
+                                    objectFit: 'cover',
+                                    objectPosition: 'center 30%',
+                                    display: 'block',
+                                }}
+                            />
+                            {/* Subtle bottom gradient overlay */}
+                            <div style={{
+                                position: 'absolute', bottom: 0, left: 0, right: 0,
+                                height: '80px',
+                                background: 'linear-gradient(to top, rgba(0,0,0,0.6), transparent)',
+                            }} />
                         </div>
 
                         {/* Floating badge */}

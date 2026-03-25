@@ -89,7 +89,7 @@ export default function TeamProfile({ member }: { member: TeamMember }) {
                                     alt={member.name}
                                     fill
                                     sizes="160px"
-                                    style={{ objectFit: 'cover' }}
+                                    style={{ objectFit: 'cover', objectPosition: member.imagePosition ?? 'center' }}
                                     priority
                                 />
                             ) : (

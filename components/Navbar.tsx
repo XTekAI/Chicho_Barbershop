@@ -107,7 +107,7 @@ export default function Navbar() {
                     </a>
                 ))}
                 <a
-                    href="tel:6093108842"
+                    href="https://booking.chichobarbershop.com/" target="_blank" rel="noopener noreferrer"
                     className="btn-primary"
                     style={{ padding: '0.6rem 1.2rem', fontSize: '0.8rem' }}
                 >
@@ -184,7 +184,7 @@ export default function Navbar() {
                             {link.label}
                         </a>
                     ))}
-                    <a href="tel:6093108842" className="btn-primary" style={{ marginTop: '0.5rem', justifyContent: 'center' }}>
+                    <a href="https://booking.chichobarbershop.com/" target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ marginTop: '0.5rem', justifyContent: 'center' }}>
                         Book Now
                     </a>
                 </div>

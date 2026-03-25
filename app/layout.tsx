@@ -93,7 +93,7 @@ export default function RootLayout({
                 longitude: -74.7452216,
               },
               hasMap:
-                "https://www.google.com/maps/place/Chicho+Barbershop+LLC/@40.2235967,-74.7477965,17z/data=!3m1!4b1!4m6!3m5!1s0x89c15905d680000f:0xf9cfbe8453285485!8m2!3d40.2235967!4d-74.7452216!16s%2Fg%2F11yfqkx5c3",
+                "https://www.google.com/maps/place/Chicho+Barbershop+LLC/@40.2236008,-74.7477965,17z/data=!3m1!4b1!4m6!3m5!1s0x89c15905d680000f:0xf9cfbe8453285485!8m2!3d40.2235967!4d-74.7452216!16s%2Fg%2F11yfqkx5c3",
               priceRange: "$$",
               areaServed: [
                 { "@type": "City", name: "Trenton" },
