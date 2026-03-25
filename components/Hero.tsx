@@ -17,7 +17,7 @@ export default function Hero() {
             {/* Background image */}
             <div style={{ position: 'absolute', inset: 0, zIndex: 0 }}>
                 <Image
-                    src="/hero.png"
+                    src="/hero2.jpg"
                     alt="Chicho Barbershop interior"
                     fill
                     priority
