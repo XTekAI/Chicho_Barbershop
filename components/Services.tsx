@@ -8,35 +8,35 @@ import { translations } from '@/lib/translations';
 const BOOKING_URL = 'https://book.squareup.com/appointments/fizei3yso5d64r/location/LE9WWBS6A0PFZ/services?buttonTextColor=000000&color=0eee1d&locale=en&referrer=so';
 
 const servicesMeta = [
-    { price: '$30', img: '/haircut.png', alt: 'Barber giving a regular haircut to a client at Chicho Barbershop', href: BOOKING_URL, external: true, icon: (
+    { img: '/haircut.png', alt: 'Barber giving a regular haircut to a client at Chicho Barbershop', href: BOOKING_URL, external: true, icon: (
         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ADFF2F" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
             <path d="M6 9l6 6 6-6" /><path d="M12 3v12M8 21h8M12 15v6" />
         </svg>
     )},
-    { price: '$30', img: '/fade.png', alt: 'Clean fade haircut blended with precision at Chicho Barbershop', href: BOOKING_URL, external: true, icon: (
+    { img: '/fade.png', alt: 'Clean fade haircut blended with precision at Chicho Barbershop', href: BOOKING_URL, external: true, icon: (
         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ADFF2F" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
             <circle cx="12" cy="5" r="3" /><path d="M12 8v8M8 14l4 4 4-4" /><path d="M5 19h14" />
         </svg>
     )},
-    { price: '$40', img: '/beard.png', alt: 'Haircut and beard trim combo service at Chicho Barbershop', href: BOOKING_URL, external: true, icon: (
+    { img: '/beard.png', alt: 'Haircut and beard trim combo service at Chicho Barbershop', href: BOOKING_URL, external: true, icon: (
         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ADFF2F" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
             <path d="M9 3H5a2 2 0 00-2 2v4a10 10 0 0014 9 10 10 0 0014-9V5a2 2 0 00-2-2h-4" /><path d="M9 3a6 6 0 006 6" />
         </svg>
     )},
-    { price: 'Variable', img: '/team/maria-work/braids 1.jpeg', alt: 'Professional braids service at Chicho Barbershop by María', href: '/team/maria', external: false, icon: (
+    { img: '/team/maria-work/braids 1.jpeg', alt: 'Professional braids service at Chicho Barbershop by María', href: '/team/maria', external: false, icon: (
         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ADFF2F" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
             <path d="M12 2C8 2 5 5 5 9c0 2.5 1.2 4.7 3 6.2V20h8v-4.8c1.8-1.5 3-3.7 3-6.2 0-4-3-7-7-7z" /><path d="M9 20h6M10 17v3M14 17v3" />
         </svg>
     )},
-    { price: 'Variable', img: '/team/gabi-work/nails 1.jpeg', alt: 'Nail services at Chicho Barbershop by Gaby', href: '/team/gabi', external: false, icon: (
+    { img: '/team/gabi-work/nails 1.jpeg', alt: 'Nail services at Chicho Barbershop by Gaby', href: '/team/gabi', external: false, icon: (
         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ADFF2F" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
             <path d="M12 2a5 5 0 015 5c0 1.5-.7 2.8-1.7 3.8L18 22H6l2.7-11.2C7.7 9.8 7 8.5 7 7a5 5 0 015-5z" /><path d="M9 22l1-4h4l1 4" />
         </svg>
     )},
 ];
 
-function ServiceCard({ name, desc, price, img, alt, href, external, icon, index }: {
-    name: string; desc: string; price: string; img: string; alt: string;
+function ServiceCard({ name, desc, img, alt, href, external, icon, index }: {
+    name: string; desc: string; img: string; alt: string;
     href: string; external: boolean; icon: React.ReactNode; index: number;
 }) {
     return (
@@ -54,9 +54,8 @@ function ServiceCard({ name, desc, price, img, alt, href, external, icon, index 
                 <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(26,26,26,1) 0%, transparent 50%)' }} />
             </div>
             <div style={{ padding: '1.5rem', flex: 1, display: 'flex', flexDirection: 'column' }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '0.75rem' }}>
-                    <div style={{ background: 'rgba(173,255,47,0.08)', borderRadius: '8px', padding: '0.6rem' }}>{icon}</div>
-                    <span style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: '1.7rem', color: '#ADFF2F', lineHeight: 1 }}>{price}</span>
+                <div style={{ marginBottom: '0.75rem' }}>
+                    <div style={{ background: 'rgba(173,255,47,0.08)', borderRadius: '8px', padding: '0.6rem', display: 'inline-flex' }}>{icon}</div>
                 </div>
                 <h3 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: '1.3rem', letterSpacing: '0.04em', color: 'white', marginBottom: '0.5rem' }}>{name}</h3>
                 <p style={{ color: 'var(--muted)', fontSize: '0.875rem', lineHeight: 1.6 }}>{desc}</p>
