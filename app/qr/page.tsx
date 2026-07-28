@@ -3,11 +3,20 @@ import Image from 'next/image';
 
 export const metadata: Metadata = {
     title: 'Chicho Barbershop LLC | Links',
-    description: 'Book an appointment, follow us on social media, or leave a review — Chicho Barbershop LLC, Trenton NJ.',
+    description: 'Book an appointment, join our loyalty program, follow us on social media, or leave a review — Chicho Barbershop LLC, Trenton NJ.',
     robots: { index: false, follow: false },
 };
 
-const links = [
+type QRLink = {
+    href: string;
+    label: string;
+    sub: string;
+    icon: React.ReactNode;
+    highlight?: boolean;
+    accent?: boolean;
+};
+
+const links: QRLink[] = [
     {
         href: 'https://www.chichobarbershop.com',
         label: 'Our Website',
@@ -34,6 +43,20 @@ const links = [
             </svg>
         ),
         highlight: true,
+    },
+    {
+        href: 'https://app.myloyalink.com/join/1458264a-b13f-403f-8d87-6ce9a462758b',
+        label: 'Join Our Loyalty Program',
+        sub: 'Earn rewards every visit 🎁',
+        icon: (
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+                <rect x="3" y="8" width="18" height="13" rx="2" />
+                <line x1="12" y1="8" x2="12" y2="21" />
+                <line x1="3" y1="13" x2="21" y2="13" />
+                <path d="M12 8S10.5 3 8 3a2.5 2.5 0 000 5zM12 8s1.5-5 4-5a2.5 2.5 0 010 5z" />
+            </svg>
+        ),
+        accent: true,
     },
     {
         href: 'https://www.instagram.com/chichobarbershop',
@@ -135,7 +158,11 @@ export default function QRPage() {
                             href={link.href}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className={link.highlight ? 'qr-link qr-link--highlight' : 'qr-link'}
+                            className={
+                                link.highlight ? 'qr-link qr-link--highlight'
+                                    : link.accent ? 'qr-link qr-link--accent'
+                                        : 'qr-link'
+                            }
                         >
                             <div className="qr-icon">
                                 {link.icon}
@@ -175,6 +202,10 @@ export default function QRPage() {
                     color: #000;
                     border: 1px solid #ADFF2F;
                 }
+                .qr-link--accent {
+                    background: rgba(173,255,47,0.06);
+                    border: 1px solid rgba(173,255,47,0.45);
+                }
                 .qr-link:hover { transform: scale(1.02); }
                 .qr-icon {
                     width: 42px;
@@ -205,6 +236,7 @@ export default function QRPage() {
                     color: #555;
                 }
                 .qr-link--highlight .qr-sub { color: rgba(0,0,0,0.6); }
+                .qr-link--accent .qr-sub { color: #7a8a5c; }
             `}</style>
         </main>
     );
