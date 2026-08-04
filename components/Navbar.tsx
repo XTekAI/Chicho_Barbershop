@@ -2,12 +2,14 @@
 
 import { useState, useEffect } from 'react';
 import { useLanguage } from '@/context/LanguageContext';
+import { useLoyalty } from '@/context/LoyaltyContext';
 import { translations } from '@/lib/translations';
 
 export default function Navbar() {
     const [scrolled, setScrolled] = useState(false);
     const [menuOpen, setMenuOpen] = useState(false);
     const { lang, toggleLang } = useLanguage();
+    const { openLoyalty } = useLoyalty();
     const t = translations[lang].nav;
 
     useEffect(() => {
@@ -75,6 +77,38 @@ export default function Navbar() {
                         {link.label}
                     </a>
                 ))}
+
+                {/* Loyalty program */}
+                <button
+                    onClick={openLoyalty}
+                    suppressHydrationWarning
+                    style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '0.4rem',
+                        background: 'none',
+                        border: 'none',
+                        padding: 0,
+                        cursor: 'pointer',
+                        fontFamily: 'inherit',
+                        color: '#ADFF2F',
+                        fontSize: '0.85rem',
+                        fontWeight: 500,
+                        letterSpacing: '0.05em',
+                        textTransform: 'uppercase',
+                        transition: 'opacity 0.2s ease',
+                    }}
+                    onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.opacity = '0.7')}
+                    onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.opacity = '1')}
+                >
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+                        <rect x="3" y="8" width="18" height="13" rx="2" />
+                        <line x1="12" y1="8" x2="12" y2="21" />
+                        <line x1="3" y1="13" x2="21" y2="13" />
+                        <path d="M12 8S10.5 3 8 3a2.5 2.5 0 000 5zM12 8s1.5-5 4-5a2.5 2.5 0 010 5z" />
+                    </svg>
+                    {t.loyalty}
+                </button>
 
                 {/* Language toggle */}
                 <button
@@ -180,6 +214,38 @@ export default function Navbar() {
                             {link.label}
                         </a>
                     ))}
+
+                    {/* Loyalty program */}
+                    <button
+                        onClick={() => { setMenuOpen(false); openLoyalty(); }}
+                        suppressHydrationWarning
+                        style={{
+                            display: 'flex',
+                            alignItems: 'center',
+                            gap: '0.5rem',
+                            background: 'none',
+                            border: 'none',
+                            borderBottom: '1px solid #1a1a1a',
+                            padding: '0.5rem 0',
+                            cursor: 'pointer',
+                            fontFamily: 'inherit',
+                            textAlign: 'left',
+                            color: '#ADFF2F',
+                            fontSize: '1rem',
+                            fontWeight: 500,
+                            letterSpacing: '0.05em',
+                            textTransform: 'uppercase',
+                        }}
+                    >
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+                            <rect x="3" y="8" width="18" height="13" rx="2" />
+                            <line x1="12" y1="8" x2="12" y2="21" />
+                            <line x1="3" y1="13" x2="21" y2="13" />
+                            <path d="M12 8S10.5 3 8 3a2.5 2.5 0 000 5zM12 8s1.5-5 4-5a2.5 2.5 0 010 5z" />
+                        </svg>
+                        {t.loyalty}
+                    </button>
+
                     <a
                         href="https://book.squareup.com/appointments/fizei3yso5d64r/location/LE9WWBS6A0PFZ/services"
                         target="_blank"

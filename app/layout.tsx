@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Inter, Bebas_Neue } from "next/font/google";
 import "./globals.css";
 import { LanguageProvider } from "@/context/LanguageContext";
+import { LoyaltyProvider } from "@/context/LoyaltyContext";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -216,7 +217,9 @@ export default function RootLayout({
       </head>
       <body className={`${inter.variable} ${bebasNeue.variable}`}>
         <LanguageProvider>
-          {children}
+          <LoyaltyProvider>
+            {children}
+          </LoyaltyProvider>
         </LanguageProvider>
       </body>
     </html>

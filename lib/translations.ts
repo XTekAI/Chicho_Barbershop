@@ -6,6 +6,7 @@ export const translations = {
             team: 'Team',
             about: 'About',
             contact: 'Contact',
+            loyalty: 'Loyalty',
             bookNow: 'Book Now',
         },
         hero: {
@@ -89,6 +90,19 @@ export const translations = {
             copyright: 'All rights reserved.',
             websiteBy: 'Website by',
         },
+        loyalty: {
+            badge: 'Free to Join',
+            title: 'JOIN OUR\nLOYALTY PROGRAM',
+            sub: 'Earn rewards every time you visit Chicho Barbershop — discounts, exclusive perks and member-only offers.',
+            perks: [
+                'Earn points on every visit',
+                'Redeem your points for discounts',
+                'Member-only promotions',
+            ],
+            cta: 'JOIN NOW — IT\'S FREE',
+            dismiss: 'Maybe later',
+            close: 'Close',
+        },
         qr: {
             location: '869 E State St, Trenton, NJ · 4.3★ Google',
             website: 'Our Website',
@@ -111,6 +125,7 @@ export const translations = {
             team: 'Equipo',
             about: 'Nosotros',
             contact: 'Contacto',
+            loyalty: 'Fidelidad',
             bookNow: 'Reservar',
         },
         hero: {
@@ -193,6 +208,19 @@ export const translations = {
             ],
             copyright: 'Todos los derechos reservados.',
             websiteBy: 'Sitio web por',
+        },
+        loyalty: {
+            badge: 'Gratis',
+            title: 'ÚNETE A NUESTRO\nPROGRAMA DE FIDELIDAD',
+            sub: 'Gana recompensas cada vez que visitas Chicho Barbershop — descuentos, beneficios exclusivos y ofertas solo para miembros.',
+            perks: [
+                'Acumula puntos en cada visita',
+                'Canjea tus puntos por descuentos',
+                'Promociones solo para miembros',
+            ],
+            cta: 'ÚNETE AHORA — ES GRATIS',
+            dismiss: 'Quizás después',
+            close: 'Cerrar',
         },
         qr: {
             location: '869 E State St, Trenton, NJ · 4.3★ Google',

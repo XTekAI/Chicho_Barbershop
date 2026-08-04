@@ -8,6 +8,7 @@ import Testimonials from '@/components/Testimonials';
 import Booking from '@/components/Booking';
 import Footer from '@/components/Footer';
 import BackToTop from '@/components/BackToTop';
+import LoyaltyPopup from '@/components/LoyaltyPopup';
 
 export default function Home() {
   return (
@@ -24,6 +25,7 @@ export default function Home() {
       </main>
       <Footer />
       <BackToTop />
+      <LoyaltyPopup />
     </>
   );
 }
